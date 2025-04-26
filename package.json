@@ -1,0 +1,37 @@
+{
+  "name": "cross-browser-extension-template",
+  "version": "1.0.0",
+  "description": "A cross-browser extension template using Vite, Preact, TypeScript and TailwindCSS for fast development.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --config vite.config.chrome.ts --watch",
+    "build:chrome": "tsc -b && vite build --config vite.config.chrome.ts",
+    "build:firefox": "tsc -b && vite build --config vite.config.firefox.ts",
+    "build": "bun run build:chrome && bun run build:firefox && bun run zip",
+    "zip": "mkdir -p extension && (cd dist_chrome && zip -r ../extension/chrome.zip .) && (cd dist_firefox && zip -r ../extension/firefox.zip .)",
+    "format": "biome format --write .",
+    "format:check": "biome format ."
+  },
+  "dependencies": {
+    "class-variance-authority": "0.7.1",
+    "clsx": "^2",
+    "lucide-preact": "^0.503.0",
+    "preact": "^10",
+    "tailwind-merge": "^3"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "2.0.0-beta.32",
+    "@preact/preset-vite": "2.10.1",
+    "@tailwindcss/vite": "4.1.4",
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "latest",
+    "@types/chrome": "0.0.315",
+    "@types/firefox-webext-browser": "120.0.4",
+    "tailwindcss": "4.1.4",
+    "typescript": "5.8.3",
+    "vite": "6.3.1"
+  },
+  "peerDependencies": {
+    "typescript": "5.8.3"
+  }
+}
