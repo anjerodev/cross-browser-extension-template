@@ -47,7 +47,7 @@ A modern, cross-browser extension template using Vite for lightning-fast HMR, Pr
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/anjerodev/cross-browser-extension-template.git
     cd chrome-extension-boilerplate
     ```
 2.  **Install dependencies:**
